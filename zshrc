@@ -18,7 +18,7 @@ export TERM="screen-256color"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
  COMPLETION_WAITING_DOTS="true"
@@ -47,6 +47,9 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/usr/local/heroku/bin:/home/marko/.rbenv/plugins/ruby-build/bin:/home/marko/.rbenv/shims:/home/marko/.rbenv/bin:/home/marko/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/marko/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0"
+
+export CDPATH=".:/home/marko:/home/marko/School:/home/marko/.vim"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

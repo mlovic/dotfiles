@@ -1,6 +1,9 @@
+machine code.heroku.com
+  login markolovic@hotmail.com
+  password 598d3d2c-9e09-456a-984e-878f3b8a9e39
 machine api.heroku.com
   login markolovic@hotmail.com
   password 598d3d2c-9e09-456a-984e-878f3b8a9e39
-machine code.heroku.com
+machine git.heroku.com
   login markolovic@hotmail.com
   password 598d3d2c-9e09-456a-984e-878f3b8a9e39
