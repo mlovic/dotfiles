@@ -22,9 +22,12 @@ set number
 set shiftwidth=2
 set tabstop=2
 set expandtab
-set showbreak=⇇
+"set showbreak=⇇
 set relativenumber
 au BufRead,BufNewFile *.thor set filetype=ruby
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+
+"let g:ctrlp_custom_ignore = '/home/marko/'
 
 augroup reload_vimrc " {
     autocmd!
