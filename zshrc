@@ -46,9 +46,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/home/marko/.rbenv/plugins/ruby-build/bin:/home/marko/.rbenv/shims:/home/marko/.rbenv/bin:/home/marko/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/marko/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0"
+export PATH="/usr/local/heroku/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0"
 
-export CDPATH=".:/home/marko:/home/marko/School:/home/marko/.vim"
+export CDPATH=".:$HOME:$HOME/School:$HOME/.vim"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
