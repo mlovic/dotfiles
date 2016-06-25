@@ -5,6 +5,18 @@ ZSH_THEME="pygmalion"
 
 export TERM="screen-256color"
 
+# Fixes curl error (77)
+export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
+# Save more history
+#
+HISTSIZE=20000
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+
+stty stop undef # unmap <C-s>
+stty erase '^?'
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -44,9 +56,11 @@ plugins=(git tmux rails)
 
 source $ZSH/oh-my-zsh.sh
 
+# Giving problems?
+#eval "$(rbenv init -)"
 # User configuration
 
-export PATH="/usr/local/heroku/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0"
+export PATH="$HOME/anaconda2/bin:/usr/local/heroku/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0:$HOME/scripts/bin"
 
 export CDPATH=".:$HOME:$HOME/School:$HOME/.vim"
 
