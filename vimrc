@@ -30,7 +30,7 @@ set relativenumber
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
-"let g:ctrlp_custom_ignore = '/home/marko/'
+let g:ctrlp_custom_ignore = 'target'
 let g:ctrlp_root_markers = ['.ruby-version', 'GEMFILE', 'project.clj']
 
 augroup reload_vimrc " {
@@ -41,9 +41,9 @@ augroup END " }
 "inoremap ( ()<Esc>i
 map! ;; <Esc> " map ;; to Esc
 imap ii <Esc> " map ii to Esc
-imap kj <Esc> " map ii to Esc
-imap jk <Esc> " map ii to Esc
-map! <CAPS> <Esc> 
+imap kj <Esc> " map kj to Esc
+imap jk <Esc> " map jk to Esc
+" map! <CAPS> <Esc> 
 map Y y$
 nnoremap w b
 nnoremap b w 
@@ -56,7 +56,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"MAPPINGS
+" LEADER MAPPINGS
 let mapleader=" "
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>W :wa<CR>:qa<CR>
@@ -77,9 +77,11 @@ nnoremap <Leader>fb :! fbcmd msg 1<CR>
 nnoremap <Leader>x :s/.$//<CR> 
 "Deletes last word of line
 nnoremap <Leader>X :s/\w*$//<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
 
 "COMMANDS
 command! Transparent hi Normal guibg=NONE ctermbg=NONE
+command  Wc '!wc %'
 
 " Should this go in clojure.vim?
 function! TestToplevel() abort  
