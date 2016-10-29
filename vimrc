@@ -1,4 +1,41 @@
-execute pathogen#infect()
+" PLUGINS
+" Load vim-plug
+if empty(glob("~/.vim/autoload/plug.vim"))
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tomtom/tlib_vim'
+Plug 'ervandew/supertab'
+Plug 'myusuf3/numbers.vim'
+Plug 'rking/ag.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'PeterRincker/vim-argumentative'
+Plug 'airblade/vim-gitgutter'
+Plug 'helino/vim-json'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-sensible'
+Plug 'guns/vim-sexp', { 'for': ['clojure', 'racket'] }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['clojure', 'racket'] }
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'kchmck/vim-coffee-script'
+Plug 'altercation/vim-colors-solarized'
+Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+
+call plug#end()
 
 set nocompatible
 set backspace=2
@@ -81,7 +118,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 
 "COMMANDS
 command! Transparent hi Normal guibg=NONE ctermbg=NONE
-command  Wc '!wc %'
+"command  Wc '!wc %'
 
 " Should this go in clojure.vim?
 function! TestToplevel() abort  
