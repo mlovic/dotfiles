@@ -52,3 +52,4 @@ lariosrsync () {
     rsync -e "ssh -p 22000" $1 deploy@82.196.6.160:/home/deploy/$2
   fi
 }
+source ~/.aliases
