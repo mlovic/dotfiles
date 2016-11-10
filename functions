@@ -1,0 +1,4 @@
+
+function vimag {
+  vim -c "Ag $*"
+}
