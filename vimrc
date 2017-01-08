@@ -144,3 +144,7 @@ au Filetype clojure let g:sexp_mappings = {
   \ 'sexp_round_head_wrap_element': '<Leader>i'
   \ }
 au Filetype clojure nmap <Leader>cf F(i#_<Esc> " FIXME
+
+if filereadable(".vim.custom")
+    so .vim.custom
+endif
