@@ -6,7 +6,7 @@ ZSH_THEME="pygmalion"
 export TERM="screen-256color"
 
 # Fixes curl error (77)
-export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+#export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 # Save more history
 #
