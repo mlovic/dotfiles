@@ -53,3 +53,7 @@ lariosrsync () {
   fi
 }
 source ~/.aliases
+source ~/.local_aliases
+source ~/.functions
+
+eval "$(rbenv init -)"
