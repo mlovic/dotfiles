@@ -16,5 +16,6 @@ for file in $files; do
     mv ~/$hidden $olddir
   fi
   echo "Creating symlink to $hidden in home directory."		    
+  # broken for the dir, see http://stackoverflow.com/a/9104384/4088940
   ln -s $dir/$file ~/$hidden
 done
