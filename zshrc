@@ -19,9 +19,10 @@ stty erase '^?'
 
 # Oh My ZSH
 COMPLETION_WAITING_DOTS="true"
-ENABLE_CORRECTION="true"
-plugins=(git tmux rails)
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ENABLE_CORRECTION="false"
+#plugins=(git tmux rails)
+plugins=(git rails)
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
 source $ZSH/oh-my-zsh.sh
 
