@@ -35,6 +35,7 @@ Plug 'tpope/vim-rails'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'https://github.com/elixir-lang/vim-elixir', { 'for': 'elixir' }
 
 call plug#end()
 
