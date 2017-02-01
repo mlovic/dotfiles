@@ -26,7 +26,7 @@ Plug 'tpope/vim-repeat'
 Plug 'guns/vim-sexp', { 'for': ['clojure', 'racket'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['clojure', 'racket'] }
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'kchmck/vim-coffee-script'
 Plug 'altercation/vim-colors-solarized'
