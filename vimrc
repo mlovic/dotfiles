@@ -116,6 +116,7 @@ nnoremap <Leader>o o<Esc>k
 nnoremap <Leader>O O<Esc>j
 nnoremap <Leader>r :RunInInteractiveShell<space>
 nnoremap <Leader>a <C-a>
+vmap     <Leader>y "+y
 nnoremap <Leader>fb :! fbcmd msg 1<CR>
 "Deletes last char of line
 nnoremap <Leader>x :s/.$//<CR> 
