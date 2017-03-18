@@ -54,7 +54,9 @@ lariosrsync () {
   fi
 }
 source ~/.aliases
-source ~/.local_aliases
+if [ -f ~/.local_aliases ]; then
+    source ~/.local_aliases
+fi
 source ~/.functions
 
 if type "rbenv" > /dev/null; then
