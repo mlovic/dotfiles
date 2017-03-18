@@ -37,6 +37,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'https://github.com/elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'thoughtbot/vim-rspec'
 
 call plug#end()
 
@@ -49,10 +50,11 @@ filetype plugin on
 filetype indent on
 set t_Co=256
 set background=dark
-"let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 colo solarized
-"hi Normal guibg=NONE ctermbg=NONE
-call togglebg#map("<F5>")
+hi Normal guibg=NONE ctermbg=NONE
+" Not working without solarized?
+"call togglebg#map("<F5>")
 set cursorline
 set wildmenu
 set showcmd
@@ -60,7 +62,7 @@ set autoindent
 " set ruler
 set confirm
 "set visualbell
- set mouse=a
+ "set mouse=a
 set cmdheight=2
 set number
 set shiftwidth=2
