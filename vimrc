@@ -14,7 +14,7 @@ Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
-Plug 'helino/vim-json'
+"Plug 'helino/vim-json' "Requires git to have username configured
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -51,7 +51,7 @@ filetype indent on
 set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
-colo solarized
+silent! colo solarized
 hi Normal guibg=NONE ctermbg=NONE
 " Not working without solarized?
 "call togglebg#map("<F5>")
@@ -111,6 +111,7 @@ nnoremap <Leader>b :bn<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>N :NERDTreeFind<CR>
 nnoremap <Leader>l :b#<CR> 
+" TODO not working for everything on linux e.g. <leader>y$
 nnoremap <Leader>p "+p<CR>
 nnoremap <Leader>y "+y
 nnoremap <Leader>. @:<CR>
