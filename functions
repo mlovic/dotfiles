@@ -2,3 +2,8 @@
 function vimag {
   vim -c "Ag $*"
 }
+
+function duh {
+  echo "du -h $* | sort -h"
+  du -h $* | sort -h
+}
