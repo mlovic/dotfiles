@@ -57,4 +57,6 @@ source ~/.aliases
 source ~/.local_aliases
 source ~/.functions
 
-eval "$(rbenv init -)"
+if type "rbenv" > /dev/null; then
+  eval "$(rbenv init -)"
+fi
