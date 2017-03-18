@@ -57,3 +57,4 @@ alias hendricks="ssh marko@37.139.5.7"
 #alias dump="~/personal/dump.sh"
 alias grmcache="gst | grep deleted | cut -d : -f 2 | xargs git rm --cached"
 alias gsh='git stash'
+alias gamend="git commit --amend --no-edit"
