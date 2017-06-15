@@ -6,4 +6,7 @@ function vimag {
 function duh {
   echo "du -h $* | sort -h"
   du -h $* | sort -h
+
+function rubyag {
+  ag '(".*$1.*\#\{|)'
 }
