@@ -39,6 +39,9 @@ export CDPATH=".:$HOME:$HOME/School:$HOME/.vim"
 
 export EDITOR='vim'
 
+# Needed on OS X
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
