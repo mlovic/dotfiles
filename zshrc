@@ -21,7 +21,7 @@ stty erase '^?'
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="false"
 #plugins=(git tmux rails)
-plugins=(git rails)
+plugins=(git)
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
 source $ZSH/oh-my-zsh.sh
