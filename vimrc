@@ -11,7 +11,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'ervandew/supertab'
 Plug 'myusuf3/numbers.vim'
 Plug 'rking/ag.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
 "Plug 'helino/vim-json' "Requires git to have username configured
