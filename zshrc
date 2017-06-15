@@ -60,5 +60,7 @@ fi
 source ~/.functions
 
 if type "rbenv" > /dev/null; then
-  eval "$(rbenv init -)"
+  #eval "$(rbenv init -)"
+  # Faster than above. Might need to rehash manually after updates!
+  eval "$(rbenv init - --no-rehash)"
 fi
