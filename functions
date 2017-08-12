@@ -31,3 +31,7 @@ function trash {
 function highlight {
   egrep --color "$1|$"
 }
+
+function rubyag {
+  ag '(".*$1.*\#\{|)'
+}
