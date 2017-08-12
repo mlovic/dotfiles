@@ -1,3 +1,7 @@
+# vim: set ft=shell
+
+DOCUMENT_ARCHIVE_PATH=~/Documents/archive/
+TRASH_PATH=~/.local/share/Trash/files/
 
 function vimag {
   vim -c "Ag $*"
@@ -6,4 +10,24 @@ function vimag {
 function duh {
   echo "du -h $* | sort -h"
   du -h $* | sort -h
+}
+
+function archive {
+  mv $1 $DOCUMENT_ARCHIVE_PATH
+}
+
+function addbook {
+# TODO
+}
+
+function dump_last {
+  mongo dump --eval "db.thoughts.find({}).sort({created_at: -1}).limit($1).pretty()"
+}
+
+function trash {
+  mv $1 $TRASH_PATH
+}
+
+function highlight {
+  egrep --color "$1|$"
 }
