@@ -13,9 +13,9 @@ setxkbmap -option ctrl:nocaps
 
 # Save more history
 #
-HISTSIZE=20000
+HISTSIZE=50000
 HISTFILE=~/.zsh_history
-SAVEHIST=20000
+SAVEHIST=50000
 
 stty stop undef # unmap <C-s>
 stty erase '^?'
