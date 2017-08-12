@@ -59,3 +59,6 @@ alias grmcache="gst | grep deleted | cut -d : -f 2 | xargs git rm --cached"
 alias gsh='git stash'
 alias gamend="git commit --amend --no-edit"
 alias gdc="git diff --cached"
+# Overwrites dc unix utility
+alias dc="docker-compose"
+alias i3conf="vim ~/.config/i3/config"
