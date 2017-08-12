@@ -16,11 +16,10 @@ Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
 "Plug 'helino/vim-json' "Requires git to have username configured
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-fugitive'
 "Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
-Plug 'tpope/vim-markdown'
+"Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'thoughtbot/vim-rspec'
 "Plug 'tpope/vim-sensible'
@@ -31,13 +30,20 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'kchmck/vim-coffee-script'
 Plug 'altercation/vim-colors-solarized'
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'https://github.com/elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'thoughtbot/vim-rspec'
+Plug 'neilagabriel/vim-geeknote'
+" Doesn't seem to be working... Formatting
+"Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+Plug 'ElmCast/elm-vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'cespare/vim-toml'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 
@@ -70,10 +76,13 @@ set tabstop=2
 set expandtab
 "set showbreak=⇇
 set relativenumber
+"set nofoldenable
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
-let g:ctrlp_custom_ignore = 'target'
+set wildignore+=*/tmp/*,public/*
+"let g:ctrlp_custom_ignore = 'target|tmp/cache'
+let g:ctrlp_custom_ignore = 'target|tmp/cache'
 let g:ctrlp_root_markers = ['.ruby-version', 'GEMFILE', 'project.clj']
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit = 0
@@ -127,6 +136,9 @@ nnoremap <Leader>x :s/.$//<CR>
 nnoremap <Leader>X :s/\w*$//<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
+" Remove trailing whitespace. Taken from https://vi.stackexchange.com/a/2285
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 "COMMANDS
 command! Transparent hi Normal guibg=NONE ctermbg=NONE
 "command  Wc '!wc %'
@@ -151,6 +163,5 @@ au Filetype clojure let g:sexp_mappings = {
   \ }
 au Filetype clojure nmap <Leader>cf F(i#_<Esc> " FIXME
 
-if filereadable(".vim.custom")
-    so .vim.custom
-endif
+"if filereadable(".vim.custom")
+    "so .vim.custom
