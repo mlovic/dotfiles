@@ -1,12 +1,14 @@
 #!/bin/bash
 set -e
 
+# TODO doesn't work if run from outside of dotfiles dir e.g. $ ./dotfiles/install.sh
+
 olddir=~/dotfiles_old
 echo "Creating $olddir for backup of any existing dotfiles in ~"		
 mkdir -p $olddir		
 
 dir=`pwd`
-files=`ls $dir`
+files=`echo *($dir) `
 
 for file in $files; do		    
   hidden=".$file" 
@@ -19,3 +21,7 @@ for file in $files; do
   # broken for the dir, see http://stackoverflow.com/a/9104384/4088940
   ln -s $dir/$file ~/$hidden
 done
+
+mkdir ~/.config/i3
+ln -s $dir/other/i3_config ~/.config/i3/config
+ln -s $dir/other/toggle_keyboard_layout.sh ~/.config/i3/toggle_keyboard_layout.sh 
