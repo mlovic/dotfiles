@@ -1,4 +1,4 @@
-# vim: set ft=shell
+# vim: set ft=sh:
 
 DOCUMENT_ARCHIVE_PATH=~/Documents/archive/
 TRASH_PATH=~/.local/share/Trash/files/

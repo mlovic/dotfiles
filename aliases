@@ -1,3 +1,4 @@
+# vim: set ft=sh:
 alias aliasconf="vim ~/.oh-my-zsh/custom/aliases.zsh"
 alias zshconf="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
