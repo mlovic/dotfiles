@@ -23,6 +23,9 @@ stty erase '^?'
 # Oh My ZSH
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="false"
+# Prevents command name from being repeated in output https://stackoverflow.com/questions/30940299/zsh-repeats-command-in-output
+DISABLE_AUTO_TITLE="true"
+
 #plugins=(git tmux rails)
 plugins=(git)
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
