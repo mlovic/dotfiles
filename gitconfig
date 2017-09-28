@@ -3,3 +3,7 @@
 [user]
 	email = markolovic33@gmail.com
 	name = Marko Lovic
+[alias]
+	ci = commit
+  # http://www.lowlevelmanager.com/2016/02/how-to-run-git-interactive-rebase-non.html
+	fixup = !GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash
