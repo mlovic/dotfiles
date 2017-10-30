@@ -63,3 +63,4 @@ alias gdc="git diff --cached"
 # Overwrites dc unix utility
 alias dc="docker-compose"
 alias i3conf="vim ~/.config/i3/config"
+alias gb='git branch --sort=-committerdate'
