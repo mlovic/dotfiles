@@ -123,6 +123,7 @@ nnoremap <Leader>l :b#<CR>
 " TODO not working for everything on linux e.g. <leader>y$
 nnoremap <Leader>p "+p<CR>
 nnoremap <Leader>y "+y
+nnoremap <Leader>yp :let @+ = expand("%:p")<CR>
 nnoremap <Leader>. @:<CR>
 nnoremap <Leader>o o<Esc>k
 nnoremap <Leader>O O<Esc>j
