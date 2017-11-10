@@ -82,7 +82,7 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 set wildignore+=*/tmp/*,public/*
 "let g:ctrlp_custom_ignore = 'target|tmp/cache'
-let g:ctrlp_custom_ignore = 'target|tmp/cache'
+let g:ctrlp_custom_ignore = 'target|tmp/cache|_build'
 let g:ctrlp_root_markers = ['.ruby-version', 'GEMFILE', 'project.clj']
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit = 0
