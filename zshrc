@@ -39,7 +39,7 @@ SAVEHIST=20000
 # Giving problems?
 # eval "$(rbenv init -)"
 
-export PATH="$HOME/anaconda2/bin:/usr/local/heroku/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0:$HOME/scripts/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
+export PATH="$HOME/anaconda2/bin:/usr/local/heroku/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0:$HOME/scripts/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:/usr/local/go/bin:$HOME/.cargo/bin:$PATH"
 
 export CDPATH=".:$HOME:$HOME/School:$HOME/.vim:$HOME/kelisto"
 
@@ -73,3 +73,9 @@ if type "rbenv" > /dev/null; then
   # Faster than above. Might need to rehash manually after updates!
   eval "$(rbenv init - --no-rehash)"
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/marko/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/marko/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/marko/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/marko/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

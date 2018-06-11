@@ -64,3 +64,9 @@ alias gdc="git diff --cached"
 alias dc="docker-compose"
 alias i3conf="vim ~/.config/i3/config"
 alias gb='git branch --sort=-committerdate'
+alias todo="vim ~/Documents/todo"
+alias i3-move='i3-msg move workspace to output'
+alias gbed="git branch --edit-description"
+alias gdedit="vim \`gst -s | grep '^ M ' | cut -d ' ' -f 3\`"
+alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
+alias lsth='ls -t | head'

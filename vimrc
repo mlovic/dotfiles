@@ -44,6 +44,11 @@ Plug 'ElmCast/elm-vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'cespare/vim-toml'
 Plug 'jceb/vim-orgmode'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'nvie/vim-flake8'
+" Incorporates fixes not in original
+Plug 'mlovic/vim-markdown-folding'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -99,9 +104,10 @@ imap kj <Esc> " map kj to Esc
 imap jk <Esc> " map jk to Esc
 " map! <CAPS> <Esc> 
 map Y y$
+"nnoremap w b
 nnoremap w b
-nnoremap b w 
-nnoremap B W
+"nnoremap b w 
+"nnoremap B W
 nnoremap W B
 
 " Window navigation
@@ -122,6 +128,7 @@ nnoremap <Leader>N :NERDTreeFind<CR>
 nnoremap <Leader>l :b#<CR> 
 " TODO not working for everything on linux e.g. <leader>y$
 nnoremap <Leader>p "+p<CR>
+nnoremap <Leader>P "+P<CR>
 nnoremap <Leader>y "+y
 nnoremap <Leader>yp :let @+ = expand("%:p")<CR>
 nnoremap <Leader>. @:<CR>

@@ -21,7 +21,7 @@ function addbook {
 }
 
 function dump_last {
-  mongo dump --eval "db.thoughts.find({}).sort({created_at: -1}).limit($1).pretty()"
+  mongo dump --eval "db.notes.find({}).sort({created_at: -1}).limit($1).pretty()"
 }
 
 function trash {
@@ -34,4 +34,8 @@ function highlight {
 
 function rubyag {
   ag '(".*$1.*\#\{|)'
+}
+
+function merge_zsh {
+  cat $1 $2 | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{if (sub(/\\$/,date)) printf "%s", $0; else print $0}' | LC_ALL=C sort -u | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{gsub('date',"\\\n"); print $0}' > $3
 }
