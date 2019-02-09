@@ -54,6 +54,7 @@ call plug#end()
 
 set nocompatible
 set backspace=2
+set ignorecase
 set smartcase
 
 syntax on
