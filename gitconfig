@@ -1,7 +1,7 @@
 [push]
 	default = simple
 [user]
-	email = markolovic33@gmail.com
+	email = mlovicbueno@gmail.com
 	name = Marko Lovic
 [alias]
 	ci = commit
