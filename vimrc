@@ -131,7 +131,9 @@ nnoremap <Leader>l :b#<CR>
 nnoremap <Leader>p "+p<CR>
 nnoremap <Leader>P "+P<CR>
 nnoremap <Leader>y "+y
-nnoremap <Leader>yp :let @+ = expand("%:p")<CR>
+nnoremap <Leader>d "+d
+nnoremap <Leader>yp :let @+ = expand("%")<CR>
+nnoremap <Leader>yP :let @+ = expand("%:p")<CR>
 nnoremap <Leader>. @:<CR>
 nnoremap <Leader>o o<Esc>k
 nnoremap <Leader>O O<Esc>j
