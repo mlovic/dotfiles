@@ -146,6 +146,7 @@ nnoremap <Leader>fb :! fbcmd msg 1<CR>
 nnoremap <Leader>x :s/.$//<CR> 
 "Deletes last word of line
 nnoremap <Leader>X :s/\w*$//<CR>
+nnoremap <Leader>q :q<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
 " Remove trailing whitespace. Taken from https://vi.stackexchange.com/a/2285
