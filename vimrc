@@ -49,6 +49,7 @@ Plug 'nvie/vim-flake8'
 " Incorporates fixes not in original
 Plug 'mlovic/vim-markdown-folding'
 Plug 'jiangmiao/auto-pairs'
+Plug 'PProvost/vim-ps1'
 
 call plug#end()
 
