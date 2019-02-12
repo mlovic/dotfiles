@@ -37,7 +37,7 @@ Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'https://github.com/elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'thoughtbot/vim-rspec'
-Plug 'neilagabriel/vim-geeknote'
+" Plug 'neilagabriel/vim-geeknote'
 " Doesn't seem to be working... Formatting
 "Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'ElmCast/elm-vim'
