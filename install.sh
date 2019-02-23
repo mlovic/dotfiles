@@ -3,6 +3,12 @@ set -e
 
 # TODO doesn't work if run from outside of dotfiles dir e.g. $ ./dotfiles/install.sh
 
+# TODO should probably just do one file at a time e.g.:
+#    $ ./install zshrc
+#    Backing up existing...
+#    Creating symlink...
+     
+
 olddir=~/dotfiles_old
 echo "Creating $olddir for backup of any existing dotfiles in ~"		
 mkdir -p $olddir		

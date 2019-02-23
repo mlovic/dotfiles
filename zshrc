@@ -7,6 +7,8 @@ export TERM="screen-256color"
 
 setxkbmap -option ctrl:nocaps
 
+# TODO in not set already?
+CUSTOM_DOTFILES_PATH="$HOME/dotfiles/custom"
 
 # Fixes curl error (77)
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
@@ -54,28 +56,14 @@ export LC_ALL=en_US.UTF-8
 # overriding git plugin alias...
 alias gc="git commit -v -m"
 
-lariosrsync () {
-  if [ "$#" -eq 3 ]; then
-    rsync -e "ssh -p 22000" $1 $2 deploy@82.196.6.160:/home/deploy/$3
-  fi
-  if [ "$#" -eq 2 ]; then
-    rsync -e "ssh -p 22000" $1 deploy@82.196.6.160:/home/deploy/$2
-  fi
-}
 source ~/.aliases
 if [ -f ~/.local_aliases ]; then
     source ~/.local_aliases
 fi
 source ~/.functions
 
-if type "rbenv" > /dev/null; then
-  #eval "$(rbenv init -)"
-  # Faster than above. Might need to rehash manually after updates!
-  eval "$(rbenv init - --no-rehash)"
+echo "CUSTOM_DOTFILES_PATH is $CUSTOM_DOTFILES_PATH"
+ls $CUSTOM_DOTFILES_PATH
+if [ -f "$CUSTOM_DOTFILES_PATH/zshrc" ]; then
+  source "$CUSTOM_DOTFILES_PATH/zshrc" 
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/marko/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/marko/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/marko/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/marko/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
