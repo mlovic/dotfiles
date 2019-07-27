@@ -36,7 +36,29 @@ SAVEHIST=50000
 # Giving problems?
  eval "$(rbenv init -)"
 
-export PATH="$HOME/.krew/bin:$HOME/anaconda2/bin:/usr/local/heroku/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0:$HOME/scripts/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:/usr/local/go/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.krew/bin:$PATH"
+export PATH="$HOME/anaconda2/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/sbin:$PATH"
+export PATH="/usr/bin:$PATH"
+export PATH="/sbin:$PATH"
+export PATH="/bin:$PATH"
+export PATH="/usr/games:$PATH"
+export PATH="/usr/local/games:$PATH"
+export PATH="$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0:$PATH"
+export PATH="$HOME/scripts/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="/opt/cabal/1.22/bin:$PATH"
+export PATH="/opt/ghc/7.10.3/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 
 export CDPATH=".:$HOME"
 
