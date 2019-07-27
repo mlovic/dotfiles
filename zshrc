@@ -34,7 +34,7 @@ HISTFILE=~/.zsh_history
 SAVEHIST=50000
 
 # Giving problems?
-# eval "$(rbenv init -)"
+ eval "$(rbenv init -)"
 
 export PATH="$HOME/anaconda2/bin:/usr/local/heroku/bin:$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0:$HOME/scripts/bin:$HOME/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:/usr/local/go/bin:$HOME/.cargo/bin:$PATH"
 
