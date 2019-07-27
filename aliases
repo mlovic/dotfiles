@@ -71,6 +71,7 @@ alias gdedit="vim \`gst -s | grep '^ M ' | cut -d ' ' -f 3\`"
 alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
 alias lsth='ls -t | head'
 alias psgrep='ps aux | grep'
+alias ns='notion-search'
 
 if [ -f "$CUSTOM_DOTFILES_PATH/aliases" ]; then
   echo "sourcing custom aliases"
