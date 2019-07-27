@@ -85,3 +85,5 @@ ls $CUSTOM_DOTFILES_PATH
 if [ -f "$CUSTOM_DOTFILES_PATH/zshrc" ]; then
   source "$CUSTOM_DOTFILES_PATH/zshrc" 
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
