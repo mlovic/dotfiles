@@ -39,3 +39,14 @@ function rubyag {
 function merge_zsh {
   cat $1 $2 | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{if (sub(/\\$/,date)) printf "%s", $0; else print $0}' | LC_ALL=C sort -u | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{gsub('date',"\\\n"); print $0}' > $3
 }
+
+function loop() {
+  sleep_time=$1
+  shift
+
+  while [ 1 ]
+  do
+      $@
+      sleep $sleep_time
+  done
+}
