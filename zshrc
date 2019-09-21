@@ -13,12 +13,6 @@ CUSTOM_DOTFILES_PATH="$HOME/dotfiles/custom"
 # Fixes curl error (77)
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
-# Save more history
-#
-HISTSIZE=50000
-HISTFILE=~/.zsh_history
-SAVEHIST=50000
-
 stty stop undef # unmap <C-s>
 stty erase '^?'
 
@@ -35,8 +29,9 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 source $ZSH/oh-my-zsh.sh
 
 # Needs to be set after oh-my-zsh
-HISTSIZE=20000
-SAVEHIST=20000
+HISTSIZE=50000
+HISTFILE=~/.zsh_history
+SAVEHIST=50000
 
 # Giving problems?
 # eval "$(rbenv init -)"
