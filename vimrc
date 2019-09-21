@@ -37,7 +37,7 @@ Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'https://github.com/elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'thoughtbot/vim-rspec'
-Plug 'neilagabriel/vim-geeknote'
+" Plug 'neilagabriel/vim-geeknote'
 " Doesn't seem to be working... Formatting
 "Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'ElmCast/elm-vim'
@@ -49,6 +49,7 @@ Plug 'nvie/vim-flake8'
 " Incorporates fixes not in original
 Plug 'mlovic/vim-markdown-folding'
 Plug 'jiangmiao/auto-pairs'
+Plug 'PProvost/vim-ps1'
 
 call plug#end()
 
@@ -145,6 +146,7 @@ nnoremap <Leader>fb :! fbcmd msg 1<CR>
 nnoremap <Leader>x :s/.$//<CR> 
 "Deletes last word of line
 nnoremap <Leader>X :s/\w*$//<CR>
+nnoremap <Leader>q :q<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
 " Remove trailing whitespace. Taken from https://vi.stackexchange.com/a/2285

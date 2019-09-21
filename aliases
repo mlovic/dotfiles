@@ -72,3 +72,9 @@ alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
 alias lsth='ls -t | head'
 # TODO make better with fzf
 alias psgrep='ps aux | grep'
+alias ns='notion-search'
+
+if [ -f "$CUSTOM_DOTFILES_PATH/aliases" ]; then
+  echo "sourcing custom aliases"
+  source "$CUSTOM_DOTFILES_PATH/aliases" 
+fi
