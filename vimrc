@@ -50,6 +50,10 @@ Plug 'nvie/vim-flake8'
 Plug 'mlovic/vim-markdown-folding'
 Plug 'jiangmiao/auto-pairs'
 Plug 'PProvost/vim-ps1'
+Plug 'jvirtanen/vim-hcl'
+Plug 'hashivim/vim-terraform'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'vim-python/python-syntax'
 
 call plug#end()
 

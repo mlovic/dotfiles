@@ -72,6 +72,8 @@ alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
 alias lsth='ls -t | head'
 alias psgrep='ps aux | grep'
 alias ns='notion-search'
+alias clip='xclip -selection clipboard'
+alias dtag='dumper tag'
 
 if [ -f "$CUSTOM_DOTFILES_PATH/aliases" ]; then
   echo "sourcing custom aliases"

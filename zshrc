@@ -29,9 +29,9 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 source $ZSH/oh-my-zsh.sh
 
 # Needs to be set after oh-my-zsh
-HISTSIZE=50000
+HISTSIZE=100000
 HISTFILE=~/.zsh_history
-SAVEHIST=50000
+SAVEHIST=100000
 
 # Giving problems?
  eval "$(rbenv init -)"
@@ -83,7 +83,28 @@ source ~/.functions
 echo "CUSTOM_DOTFILES_PATH is $CUSTOM_DOTFILES_PATH"
 ls $CUSTOM_DOTFILES_PATH
 if [ -f "$CUSTOM_DOTFILES_PATH/zshrc" ]; then
+  echo "sourcing custom zshrc"
   source "$CUSTOM_DOTFILES_PATH/zshrc" 
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:$HOME/bin
+
+export PATH=$PATH:$HOME/.linkerd2/bin
+export PATH=$PATH:$HOME/istio-1.4.3/bin
+source ~/istio-1.4.3/tools/_istioctl
+source <(kubectl completion zsh)
+
+export PATH=$PATH:$HOME/confluent-hub/bin/
+export PATH=$PATH:/usr/local/kafka/bin/
+export PATH=$PATH:/usr/local/go/bin/
+
+#OktaAWSCLI
+if [[ -f "$HOME/.okta/bash_functions" ]]; then
+    . "$HOME/.okta/bash_functions"
+fi
+if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
+    PATH="$HOME/.okta/bin:$PATH"
+fi
+
+export PATH="$HOME/.okta/bin:$PATH"

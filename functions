@@ -1,6 +1,6 @@
 # vim: set ft=sh:
 
-DOCUMENT_ARCHIVE_PATH=~/Documents/archive/
+DOCUMENT_ARCHIVE_PATH=~/archive/
 TRASH_PATH=~/.local/share/Trash/files/
 
 function vimag {
@@ -49,4 +49,8 @@ function loop() {
       $@
       sleep $sleep_time
   done
+}
+
+function bak() {
+  cp -n $1 $1.bak
 }
