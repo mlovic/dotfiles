@@ -70,6 +70,7 @@ alias gbed="git branch --edit-description"
 alias gdedit="vim \`gst -s | grep '^ M ' | cut -d ' ' -f 3\`"
 alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
 alias lsth='ls -t | head'
+# TODO make better with fzf
 alias psgrep='ps aux | grep'
 alias ns='notion-search'
 alias clip='xclip -selection clipboard'
