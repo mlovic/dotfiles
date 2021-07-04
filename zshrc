@@ -5,6 +5,7 @@ ZSH_THEME="pygmalion"
 
 export TERM="screen-256color"
 
+# TODO run this only on system startup
 setxkbmap -option ctrl:nocaps
 
 # TODO in not set already?
@@ -91,8 +92,6 @@ fi
 export PATH=$PATH:$HOME/bin
 
 export PATH=$PATH:$HOME/.linkerd2/bin
-export PATH=$PATH:$HOME/istio-1.4.3/bin
-source ~/istio-1.4.3/tools/_istioctl
 source <(kubectl completion zsh)
 
 export PATH=$PATH:$HOME/confluent-hub/bin/
