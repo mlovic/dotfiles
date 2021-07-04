@@ -34,15 +34,19 @@ HISTSIZE=100000
 HISTFILE=~/.zsh_history
 SAVEHIST=100000
 
-# Giving problems?
- eval "$(rbenv init -)"
+if command -v rbenv &> /dev/null
+then
+  # Giving problems?
+  eval "$(rbenv init -)"
+  export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+  export PATH="$HOME/.rbenv/shims:$PATH"
+  export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+
 
 export PATH="$HOME/.krew/bin:$PATH"
 export PATH="$HOME/anaconda2/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
@@ -88,7 +92,6 @@ if [ -f "$CUSTOM_DOTFILES_PATH/zshrc" ]; then
   source "$CUSTOM_DOTFILES_PATH/zshrc" 
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH=$PATH:$HOME/bin
 
 export PATH=$PATH:$HOME/.linkerd2/bin
@@ -107,3 +110,7 @@ if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
 fi
 
 export PATH="$HOME/.okta/bin:$PATH"
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+source /usr/share/doc/fzf/examples/completion.zsh
