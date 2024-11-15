@@ -32,8 +32,12 @@ sudo apt-get install -y \
     tree \
     unzip \
     python3 \
-    python3-pip \
-    fzf
+    python3-pip
+
+# Install fzf from source
+log "Installing fzf..."
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
 
 # Setup SSH key
 setup_ssh() {
