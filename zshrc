@@ -110,14 +110,13 @@ fi
 
 export PATH="$HOME/.okta/bin:$PATH"
 
-# Load fzf if installed
-if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
-fi
+# Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [[ -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
-    source /usr/share/doc/fzf/examples/completion.zsh
-fi
+# fzf configuration
+export FZF_DEFAULT_COMMAND='find . -type f -not -path "*/\.git/*" -not -path "*/node_modules/*"'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 precmd () { pwd > /tmp/whereami }
   # This lazy loads nvm

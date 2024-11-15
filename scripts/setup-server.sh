@@ -32,7 +32,8 @@ sudo apt-get install -y \
     tree \
     unzip \
     python3 \
-    python3-pip
+    python3-pip \
+    fzf
 
 # Setup SSH key
 setup_ssh() {
