@@ -21,7 +21,7 @@ fi
 
 # Get the directory where the script is located
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BACKUP_DIR="$HOME/.dotfiles.backup.$(date +%Y%m%d_%H%M%S)"
+BACKUP_DIR="$HOME/dotfiles.backup.$(date +%Y%m%d_%H%M%S)"
 
 # Colors for output
 RED='\033[0;31m'
