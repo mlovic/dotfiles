@@ -1,7 +1,7 @@
 # vim: set ft=sh:
 
 DOCUMENT_ARCHIVE_PATH=~/archive/
-TRASH_PATH=~/.local/share/Trash/files/
+TRASH_PATH=~/trash/
 
 function vimag {
   vim -c "Ag $*"
@@ -53,4 +53,8 @@ function loop() {
 
 function bak() {
   cp -n $1 $1.bak
+}
+
+function backup_home_with_excludes {
+  time tar --exclude='Downloads' --exclude '.config/google-chrome' --exclude='.local/share/Steam' --exclude='.cache' --exclude='repos-old' --exclude='.gradle' --exclude='.stg' --exclude=thinkpad_x1cg8_backup_2022-10-26.tar.gz --ignore-failed-read --warning=no-file-changed -v -zcvf thinkpad_x1cg8_backup_2022-10-26.tar.gz .
 }
