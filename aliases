@@ -23,92 +23,53 @@ alias gbed="git branch --edit-description"
 alias gdedit="vim \$(git status -s | grep '^ M ' | cut -d ' ' -f 3)"
 alias grmcache="git status | grep deleted | cut -d : -f 2 | xargs git rm --cached"
 
-# Filesystem navigation
+# Filesystem navigation and operations
 alias cd..="cd .."
 alias lsat="ls -laht"
 alias lsth='ls -t | head'
 alias rmi="rm -i"
 alias shist="history | grep"
 alias lsgrep="ls | egrep"
+alias openlast="ls -t | head -1 | xargs -0 xdg-open"
 
-# Development
+# Development tools
 alias be="bundle exec"
 alias guard="bundle exec guard"
 alias dc="docker-compose"
+alias zvi="set -o vi"
+alias exti="exit"
 
-# System
+# System utilities
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias open="xdg-open"
 alias clip='xclip -selection clipboard'
-alias brownnoise="play -n synth brownnoise"
 alias psgrep='ps aux | grep'
+alias i3-move='i3-msg move workspace to output'
 
 # Vim
 alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
 alias nextswp="ls .sw* | head -1 | tee /dev/tty | xargs vim -r"
 
-# Scripts and tools
+# Media and sound
 alias spotify="$HOME/scripts/spotify.sh"
 alias spot="$HOME/scripts/spotify.sh"
 alias pause="$HOME/scripts/spotify.sh PlayPause"
 alias ks="killall spotify"
-alias diffdir="$HOME/scripts/diffdir.pl"
-alias todo="vim ~/Documents/todo"
-#alias dumper="~/dumper/bin/dumper.rb"
-#alias dump="~/dumper/bin/dumper.rb dump"
-#alias cplus="~/scripts/cpp/cpp.thor"
-#alias madrid="gn edit 'MADRID 2015'"
-alias open="xdg-open"
-#alias gnideas="gn edit 'Geeknote fork'"
-alias zvi="set -o vi"
-alias gav="git add --verbose"
-alias gc="git commit -v -m"
-alias gaa="git add -A"
-#alias rspec="bundle exec rspec"
-alias guard="bundle exec guard"
-#alias vimode="bindkey -v"
-#alias weight="~/scripts/weight_tracker/weight_tracker.thor"
-alias cd..="cd .."
-alias exti="exit"
-alias lsat="ls -laht"
-alias rmi="rm -i"
-#alias larios="ssh -p 22000 deploy@82.196.6.160"
+alias brownnoise="play -n synth brownnoise"
+alias audacity="PULSE_LATENCY_MSEC=30 audacity"
+
+# SSH connections
 alias larios="ssh deploy@82.196.6.160"
 alias pi="ssh root@192.168.1.6"
-#alias dumper="~/scripts/dumper/dumper_cli.rb"
-#alias dump="~/scripts/dumper/dumper_cli.rb dump"
-alias shist="history | grep"
-alias lsgrep="ls | egrep"
-alias izzy="echo '!!' | mutt -s 'subj' izzisb@gmail.com"
-#alias record="/home/marko/scripts/record.rb"
-alias brownnoise="play -n synth brownnoise"
-alias openlast="ls -t | head -1 | xargs -0 xdg-open"
-alias nextswp="ls .sw* | head -1 | tee /dev/tty | xargs vim -r"
-alias audacity="PULSE_LATENCY_MSEC=30 audacity"
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias be="bundle exec"
 alias hendricks="ssh marko@37.139.5.7"
-#alias dump="~/personal/dump.sh"
-alias grmcache="gst | grep deleted | cut -d : -f 2 | xargs git rm --cached"
-alias gsh='git stash'
-alias gamend="git commit --amend --no-edit"
-alias gdc="git diff --cached"
-# Overwrites dc unix utility
-alias dc="docker-compose"
-alias i3conf="vim ~/.config/i3/config"
-alias gb='git branch --sort=-committerdate'
+
+# Tools and utilities
+alias diffdir="$HOME/scripts/diffdir.pl"
 alias todo="vim ~/Documents/todo"
-alias i3-move='i3-msg move workspace to output'
-alias gbed="git branch --edit-description"
-alias gdedit="vim \`gst -s | grep '^ M ' | cut -d ' ' -f 3\`"
-alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
-alias lsth='ls -t | head'
-# TODO make better with fzf
-alias psgrep='ps aux | grep'
 alias ns='notion-search'
-alias clip='xclip -selection clipboard'
 alias dtag='dumper tag'
 
+# Custom aliases
 if [ -f "$CUSTOM_DOTFILES_PATH/aliases" ]; then
   source "$CUSTOM_DOTFILES_PATH/aliases" 
 fi
