@@ -11,26 +11,19 @@ Plug 'tomtom/tlib_vim'
 Plug 'ervandew/supertab'
 Plug 'myusuf3/numbers.vim'
 Plug 'rking/ag.vim'
-"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
-"Plug 'helino/vim-json' "Requires git to have username configured
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
-"Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'thoughtbot/vim-rspec'
-"Plug 'tpope/vim-sensible'
 Plug 'guns/vim-sexp', { 'for': ['clojure', 'racket'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['clojure', 'racket'] }
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'kchmck/vim-coffee-script'
 Plug 'altercation/vim-colors-solarized'
-"Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
@@ -59,10 +52,17 @@ nmap <C-P> :FZF<CR>
 
 call plug#end()
 
+" Basic Settings
 set nocompatible
 set backspace=2
 set ignorecase
 set smartcase
+set hidden
+set history=1000
+set updatetime=300
+set scrolloff=8
+set sidescrolloff=8
+set clipboard=unnamed,unnamedplus
 
 syntax on
 filetype plugin on
@@ -80,25 +80,24 @@ set showcmd
 set autoindent
 " set ruler
 set confirm
-"set visualbell
- "set mouse=a
 set cmdheight=2
 set number
 set shiftwidth=2
 set tabstop=2
 set expandtab
-"set showbreak=⇇
+set signcolumn=yes
+set colorcolumn=80
 set relativenumber
 "set nofoldenable
 au BufRead,BufNewFile *.thor set filetype=ruby
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 set wildignore+=*/tmp/*,public/*
-"let g:ctrlp_custom_ignore = 'target|tmp/cache'
-let g:ctrlp_custom_ignore = 'target|tmp/cache|_build|myenv'
-let g:ctrlp_root_markers = ['.ruby-version', 'GEMFILE', 'project.clj']
-let g:ctrlp_use_caching=1
-let g:ctrlp_clear_cache_on_exit = 0
+" Plugin configurations
+let g:NERDTreeShowHidden=1
+let g:NERDTreeQuitOnOpen=1
+let g:gitgutter_enabled=1
+let g:python_highlight_all=1
 
 augroup reload_vimrc " {
     autocmd!
