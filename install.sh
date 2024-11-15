@@ -50,6 +50,7 @@ declare -A files=(
     ["functions"]="$HOME/.functions"
     ["aliases"]="$HOME/.aliases"
     ["gitconfig"]="$HOME/.gitconfig"
+    ["xprofile"]="$HOME/.xprofile"
     ["other/i3_config"]="$HOME/.config/i3/config"
     ["other/toggle_keyboard_layout.sh"]="$HOME/.config/i3/toggle_keyboard_layout.sh"
 )

@@ -1,0 +1,7 @@
+# X11 startup configuration
+# Loaded by display managers when X session starts
+
+# Remap Caps Lock to Ctrl
+setxkbmap -option ctrl:nocaps
+
+# Add any other X11 startup commands here
