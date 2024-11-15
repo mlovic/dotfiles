@@ -8,8 +8,6 @@ export TERM="screen-256color"
 # TODO run this only on system startup
 setxkbmap -option ctrl:nocaps
 
-# TODO in not set already?
-CUSTOM_DOTFILES_PATH="$HOME/dotfiles/custom"
 
 # Fixes curl error (77)
 #export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
@@ -18,21 +16,28 @@ stty stop undef # unmap <C-s>
 stty erase '^?'
 
 # Oh My ZSH
+DISABLE_AUTO_UPDATE=true
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="false"
 # Prevents command name from being repeated in output https://stackoverflow.com/questions/30940299/zsh-repeats-command-in-output
 DISABLE_AUTO_TITLE="true"
+ZSH_DISABLE_COMPFIX="true"
 
 #plugins=(git tmux rails)
-plugins=(git)
+#
+#zstyle ':omz:plugins:nvm' lazy yes
+plugins=(
+  git
+  #nvm
+)
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
 source $ZSH/oh-my-zsh.sh
 
 # Needs to be set after oh-my-zsh
-HISTSIZE=100000
+HISTSIZE=2000000
 HISTFILE=~/.zsh_history
-SAVEHIST=100000
+SAVEHIST=2000000
 
 if command -v rbenv &> /dev/null
 then
@@ -85,12 +90,14 @@ if [ -f ~/.local_aliases ]; then
 fi
 source ~/.functions
 
-echo "CUSTOM_DOTFILES_PATH is $CUSTOM_DOTFILES_PATH"
-ls $CUSTOM_DOTFILES_PATH
-if [ -f "$CUSTOM_DOTFILES_PATH/zshrc" ]; then
-  echo "sourcing custom zshrc"
-  source "$CUSTOM_DOTFILES_PATH/zshrc" 
-fi
+## TODO in not set already?
+#CUSTOM_DOTFILES_PATH="$HOME/dotfiles/custom"
+#echo "CUSTOM_DOTFILES_PATH is $CUSTOM_DOTFILES_PATH"
+#ls $CUSTOM_DOTFILES_PATH
+#if [ -f "$CUSTOM_DOTFILES_PATH/zshrc" ]; then
+  #echo "sourcing custom zshrc"
+  #source "$CUSTOM_DOTFILES_PATH/zshrc" 
+#fi
 
 export PATH=$PATH:$HOME/bin
 
@@ -100,6 +107,7 @@ source <(kubectl completion zsh)
 export PATH=$PATH:$HOME/confluent-hub/bin/
 export PATH=$PATH:/usr/local/kafka/bin/
 export PATH=$PATH:/usr/local/go/bin/
+export PATH=$PATH:$HOME/kafka/bin/
 
 #OktaAWSCLI
 if [[ -f "$HOME/.okta/bash_functions" ]]; then
@@ -114,3 +122,24 @@ export PATH="$HOME/.okta/bin:$PATH"
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 source /usr/share/doc/fzf/examples/completion.zsh
+
+#xinput --set-prop 21 'libinput Accel Speed' 0.9
+#
+precmd () { pwd > /tmp/whereami }
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+  # This lazy loads nvm
+export NVM_DIR="$HOME/.nvm"
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+  nvm $@
+}
+
+export FLYCTL_INSTALL="/home/marko/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+alias python=python3
