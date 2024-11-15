@@ -38,7 +38,14 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+
+#bindsym $mod+Return exec gnome-terminal --working-directory="`xcwd`"
+#bindsym $mod+Return exec gnome-terminal --working-directory="`xcwd`"
+bindsym $mod+Return exec gnome-terminal --working-directory="$(cat /tmp/whereami)"
+#bindsym $mod+Return exec /home/marko/i3-shell.sh
+
+#bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -162,6 +169,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        #status_command i3status -c /home/marko/dotfiles/i3status.conf
         # TODO create a wrapper for i3status to handle custom stuff - i3status_custom ?
         #status_command i3status | ~/i3status-netusage/i3status-netusage --interface=wlp4s0
         #status_command ~/i3status-rust/target/release/i3status-rs ~/.config/i3/status.toml
@@ -170,14 +178,14 @@ bar {
 # Media keys https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
 #
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 4 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 4 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 4 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 #bindsym XF86MonBrightnessUp exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -196,5 +204,9 @@ workspace_auto_back_and_forth yes
 
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-
+exec --no-startup-id redshift -l 37:-122
+exec --no-startup-id rescuetime
 #exec gnome-settings-daemon
+#
+exec --no-startup-id xinput --set-prop 21 'libinput Accel Speed' 0.9
+exec --no-startup-id xinput --set-prop 17 'libinput Accel Speed' 0.4
