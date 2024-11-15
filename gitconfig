@@ -20,6 +20,10 @@
 	df = diff
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	fixup = !GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !gitk
+	amend = commit --amend --no-edit
 [color]
 	ui = auto
 [fetch]

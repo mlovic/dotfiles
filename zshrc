@@ -89,15 +89,16 @@ source ~/.functions
   #source "$CUSTOM_DOTFILES_PATH/zshrc" 
 #fi
 
-export PATH=$PATH:$HOME/bin
+# Additional PATH entries
+path+=(
+    $HOME/.linkerd2/bin
+    $HOME/confluent-hub/bin
+    /usr/local/kafka/bin
+    $HOME/kafka/bin
+)
 
-export PATH=$PATH:$HOME/.linkerd2/bin
+# Load kubectl completion
 source <(kubectl completion zsh)
-
-export PATH=$PATH:$HOME/confluent-hub/bin/
-export PATH=$PATH:/usr/local/kafka/bin/
-export PATH=$PATH:/usr/local/go/bin/
-export PATH=$PATH:$HOME/kafka/bin/
 
 #OktaAWSCLI
 if [[ -f "$HOME/.okta/bash_functions" ]]; then

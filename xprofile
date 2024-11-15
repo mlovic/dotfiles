@@ -4,4 +4,7 @@
 # Remap Caps Lock to Ctrl
 setxkbmap -option ctrl:nocaps
 
+# Set keyboard repeat delay and rate
+xset r rate 200 40
+
 # Add any other X11 startup commands here
