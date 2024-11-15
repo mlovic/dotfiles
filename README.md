@@ -15,7 +15,7 @@ Personal dotfiles configuration for Linux/Unix systems.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+git clone https://github.com/mlovic/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
