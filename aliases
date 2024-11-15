@@ -1,26 +1,59 @@
 # vim: set ft=sh:
+
+# Config file editing
 alias aliasconf="vim ~/.oh-my-zsh/custom/aliases.zsh"
 alias zshconf="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
-alias apacheconf="sudo vi /etc/apache2/sites-enabled/000-default.conf"
-alias td="tmux detach"
-alias ta="tmux attach" # overriding tmux plugin
-alias rsnip="vim ~/.vim/snippets/rails.snippets"
+alias i3conf="vim ~/.config/i3/config"
 alias reload=". ~/.zshrc"
-#alias todo="vim ~/Documents/todo.txt"
-#
-# TODO: move scripts to /bin directory of executables and add to $PATH
-#alias todo="~/scripts/todo.sh"
-alias gn="geeknote"
-alias spotify="~/scripts/spotify.sh"
-alias spot="~/scripts/spotify.sh"
-alias pause="~/scripts/spotify.sh PlayPause"
+
+# Tmux
+alias td="tmux detach"
+alias ta="tmux attach"
+
+# Git aliases (supplementing oh-my-zsh git plugin)
+alias gav="git add --verbose"
+alias gc="git commit -v -m"
+alias gaa="git add -A"
+alias gsh='git stash'
+alias gamend="git commit --amend --no-edit"
+alias gdc="git diff --cached"
+alias gb='git branch --sort=-committerdate'
+alias gbed="git branch --edit-description"
+alias gdedit="vim \$(git status -s | grep '^ M ' | cut -d ' ' -f 3)"
+alias grmcache="git status | grep deleted | cut -d : -f 2 | xargs git rm --cached"
+
+# Filesystem navigation
+alias cd..="cd .."
+alias lsat="ls -laht"
+alias lsth='ls -t | head'
+alias rmi="rm -i"
+alias shist="history | grep"
+alias lsgrep="ls | egrep"
+
+# Development
+alias be="bundle exec"
+alias guard="bundle exec guard"
+alias dc="docker-compose"
+
+# System
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias open="xdg-open"
+alias clip='xclip -selection clipboard'
+alias brownnoise="play -n synth brownnoise"
+alias psgrep='ps aux | grep'
+
+# Vim
+alias dvim='vim -c "cd ~/Documents | set ft=markdown"'
+alias nextswp="ls .sw* | head -1 | tee /dev/tty | xargs vim -r"
+
+# Scripts and tools
+alias spotify="$HOME/scripts/spotify.sh"
+alias spot="$HOME/scripts/spotify.sh"
+alias pause="$HOME/scripts/spotify.sh PlayPause"
 alias ks="killall spotify"
-alias newalias="~/scripts/alias.thor create"
-alias diffdir="~/scripts/diffdir.pl"
-alias spoof-mac="~/scripts/spoof_mac.sh"
-alias class="~/scripts/record.rb"
-alias aglastmod="/home/marko/scripts/lastmodsearch.sh"
+alias diffdir="$HOME/scripts/diffdir.pl"
+alias todo="vim ~/Documents/todo"
 #alias dumper="~/dumper/bin/dumper.rb"
 #alias dump="~/dumper/bin/dumper.rb dump"
 #alias cplus="~/scripts/cpp/cpp.thor"
