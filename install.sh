@@ -1,39 +1,72 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-# TODO doesn't work if run from outside of dotfiles dir e.g. $ ./dotfiles/install.sh
+# Get the directory where the script is located
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BACKUP_DIR="$HOME/.dotfiles.backup.$(date +%Y%m%d_%H%M%S)"
 
-# TODO should probably just do one file at a time e.g.:
-#    $ ./install zshrc
-#    Backing up existing...
-#    Creating symlink...
-     
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
 
-#olddir=~/dotfiles_old
-#echo "Creating $olddir for backup of any existing dotfiles in ~"		
-#mkdir -p $olddir		
+log() { echo -e "${GREEN}==>${NC} $1"; }
+warn() { echo -e "${YELLOW}Warning:${NC} $1"; }
+error() { echo -e "${RED}Error:${NC} $1"; exit 1; }
 
-#dir=`pwd`
-#files=`echo *($dir) `
+# Create backup directory if needed
+backup_if_exists() {
+    if [ -e "$1" ]; then
+        if [ ! -d "$BACKUP_DIR" ]; then
+            mkdir -p "$BACKUP_DIR"
+            log "Created backup directory at $BACKUP_DIR"
+        fi
+        mv "$1" "$BACKUP_DIR/"
+        log "Backed up existing $(basename "$1") to $BACKUP_DIR/"
+    fi
+}
 
-#for file in $files; do		    
-  #hidden=".$file" 
-  #if [ -f ~/$hidden ];
-  #then
-    #echo "Moving existing $hidden ~ to $olddir"		    
-    #mv ~/$hidden $olddir
-  #fi
-  #echo "Creating symlink to $hidden in home directory."		    
-  ## broken for the dir, see http://stackoverflow.com/a/9104384/4088940
-  #ln -s $dir/$file ~/$hidden
-#done
+# Ensure we're in the correct directory
+cd "$DOTFILES_DIR"
 
-mkdir ~/.config/i3
-ln -s `pwd`/other/i3_config ~/.config/i3/config
-ln -s `pwd`/other/toggle_keyboard_layout.sh ~/.config/i3/toggle_keyboard_layout.sh 
+# Create necessary directories
+log "Creating required directories..."
+mkdir -p ~/.config/i3
+mkdir -p ~/.vim/autoload
+mkdir -p ~/.oh-my-zsh-custom/themes
 
-ln -s `pwd`/vimrc ~/.vimrc
-ln -s `pwd`/zshrc ~/.zshrc
-ln -s `pwd`/functions ~/.functions
-ln -s `pwd`/aliases ~/.aliases
-ln -s `pwd`/gitconfig ~/.gitconfig
+# Install vim-plug if not present
+if [ ! -f ~/.vim/autoload/plug.vim ]; then
+    log "Installing vim-plug..."
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
+# Define files to symlink
+declare -A files=(
+    ["vimrc"]="$HOME/.vimrc"
+    ["zshrc"]="$HOME/.zshrc"
+    ["functions"]="$HOME/.functions"
+    ["aliases"]="$HOME/.aliases"
+    ["gitconfig"]="$HOME/.gitconfig"
+    ["other/i3_config"]="$HOME/.config/i3/config"
+    ["other/toggle_keyboard_layout.sh"]="$HOME/.config/i3/toggle_keyboard_layout.sh"
+)
+
+# Create symlinks
+for source in "${!files[@]}"; do
+    target="${files[$source]}"
+    if [ -e "$DOTFILES_DIR/$source" ]; then
+        backup_if_exists "$target"
+        ln -sf "$DOTFILES_DIR/$source" "$target"
+        log "Created symlink for $source"
+    else
+        warn "Source file $source does not exist"
+    fi
+done
+
+# Make scripts executable
+chmod +x "$HOME/.config/i3/toggle_keyboard_layout.sh"
+
+log "Installation complete! Please restart your shell."

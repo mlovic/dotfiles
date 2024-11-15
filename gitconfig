@@ -1,9 +1,32 @@
 [push]
 	default = simple
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
 [user]
 	email = mlovicbueno@gmail.com
 	name = Marko Lovic
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+	autocrlf = input
 [alias]
 	ci = commit
-  # http://www.lowlevelmanager.com/2016/02/how-to-run-git-interactive-rebase-non.html
+	st = status
+	br = branch
+	co = checkout
+	df = diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	fixup = !GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash
+[color]
+	ui = auto
+[fetch]
+	prune = true
+[diff]
+	algorithm = histogram
+[merge]
+	conflictstyle = diff3
+[help]
+	autocorrect = 1
