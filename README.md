@@ -13,7 +13,12 @@ Personal dotfiles configuration for Linux/Unix systems.
 
 ## Installation
 
-1. Clone the repository:
+1. Make the installation scripts executable:
+```bash
+chmod +x install.sh scripts/setup-server.sh
+```
+
+2. Clone the repository:
 ```bash
 git clone https://github.com/mlovic/dotfiles.git ~/dotfiles
 cd ~/dotfiles

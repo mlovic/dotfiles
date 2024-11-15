@@ -88,5 +88,6 @@ done
 
 # Make scripts executable
 chmod +x "$HOME/.config/i3/toggle_keyboard_layout.sh"
+chmod +x "$DOTFILES_DIR/scripts/setup-server.sh"
 
 log "Installation complete! Please restart your shell."
