@@ -5,8 +5,6 @@ ZSH_THEME="pygmalion"
 
 export TERM="screen-256color"
 
-# TODO run this only on system startup
-setxkbmap -option ctrl:nocaps
 
 
 # Fixes curl error (77)
@@ -49,26 +47,18 @@ then
 fi
 
 
-export PATH="$HOME/.krew/bin:$PATH"
-export PATH="$HOME/anaconda2/bin:$PATH"
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/sbin:$PATH"
-export PATH="/usr/bin:$PATH"
-export PATH="/sbin:$PATH"
-export PATH="/bin:$PATH"
-export PATH="/usr/games:$PATH"
-export PATH="/usr/local/games:$PATH"
-export PATH="$HOME/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0:$PATH"
-export PATH="$HOME/scripts/bin:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
-export PATH="/opt/cabal/1.22/bin:$PATH"
-export PATH="/opt/ghc/7.10.3/bin:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
+# Set PATH
+path=(
+    $HOME/bin
+    $HOME/.local/bin
+    $HOME/.cargo/bin
+    /usr/local/go/bin
+    /usr/local/{bin,sbin}
+    /usr/{bin,sbin}
+    /{bin,sbin}
+    $path
+)
+export PATH
 
 
 export CDPATH=".:$HOME"
@@ -119,18 +109,16 @@ fi
 
 export PATH="$HOME/.okta/bin:$PATH"
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+# Load fzf if installed
+if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
 
-source /usr/share/doc/fzf/examples/completion.zsh
+if [[ -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
+    source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
-#xinput --set-prop 21 'libinput Accel Speed' 0.9
-#
 precmd () { pwd > /tmp/whereami }
-
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#
   # This lazy loads nvm
 export NVM_DIR="$HOME/.nvm"
 nvm() {
