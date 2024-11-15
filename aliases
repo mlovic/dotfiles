@@ -110,6 +110,5 @@ alias clip='xclip -selection clipboard'
 alias dtag='dumper tag'
 
 if [ -f "$CUSTOM_DOTFILES_PATH/aliases" ]; then
-  echo "sourcing custom aliases"
   source "$CUSTOM_DOTFILES_PATH/aliases" 
 fi
