@@ -11,7 +11,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'ervandew/supertab'
 Plug 'myusuf3/numbers.vim'
 Plug 'rking/ag.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
 "Plug 'helino/vim-json' "Requires git to have username configured
@@ -54,6 +54,8 @@ Plug 'jvirtanen/vim-hcl'
 Plug 'hashivim/vim-terraform'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'vim-python/python-syntax'
+Plug 'junegunn/fzf'
+nmap <C-P> :FZF<CR>
 
 call plug#end()
 
@@ -93,7 +95,7 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 set wildignore+=*/tmp/*,public/*
 "let g:ctrlp_custom_ignore = 'target|tmp/cache'
-let g:ctrlp_custom_ignore = 'target|tmp/cache|_build'
+let g:ctrlp_custom_ignore = 'target|tmp/cache|_build|myenv'
 let g:ctrlp_root_markers = ['.ruby-version', 'GEMFILE', 'project.clj']
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit = 0
@@ -182,3 +184,4 @@ au Filetype clojure nmap <Leader>cf F(i#_<Esc> " FIXME
 
 "if filereadable(".vim.custom")
     "so .vim.custom
+    "
