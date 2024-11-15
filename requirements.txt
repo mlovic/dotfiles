@@ -1,0 +1,4 @@
+# Python packages required by various scripts
+pyyaml>=5.1
+requests>=2.25.1
+python-dotenv>=0.19.0

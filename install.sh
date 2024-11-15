@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Check for required dependencies
+check_dependency() {
+    if ! command -v "$1" >/dev/null 2>&1; then
+        error "$1 is required but not installed. Please install it first."
+    fi
+}
+
+check_dependency "git"
+check_dependency "curl"
+check_dependency "vim"
+check_dependency "zsh"
+
+# Install oh-my-zsh if not present
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    log "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
 # Get the directory where the script is located
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BACKUP_DIR="$HOME/.dotfiles.backup.$(date +%Y%m%d_%H%M%S)"
