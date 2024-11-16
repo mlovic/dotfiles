@@ -70,6 +70,12 @@ setup_git() {
 setup_ssh
 setup_git
 
+# Set zsh as default shell
+if [ "$SHELL" != "/usr/bin/zsh" ]; then
+    log "Setting zsh as default shell..."
+    chsh -s $(which zsh)
+fi
+
 log "Server setup complete!"
 log "Next steps:"
 log "1. Install dotfiles: git clone https://github.com/mlovic/dotfiles.git ~/.dotfiles"
