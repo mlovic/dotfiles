@@ -44,15 +44,40 @@ EOL
 
 # Harden SSH configuration
 log "Hardening SSH configuration..."
-sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sudo tee -a /etc/ssh/sshd_config > /dev/null <<EOL
+SSHD_CONFIG="/etc/ssh/sshd_config"
 
-# Security hardening
-PermitRootLogin no
-PasswordAuthentication no
-X11Forwarding no
-MaxAuthTries 3
-EOL
+# Backup with timestamp
+sudo cp "$SSHD_CONFIG" "${SSHD_CONFIG}.bak.$(date +%Y%m%d_%H%M%S)"
+
+# Function to safely modify SSH config
+modify_sshd_config() {
+    local param=$1
+    local value=$2
+    if sudo grep -q "^#*${param}" "$SSHD_CONFIG"; then
+        # If parameter exists (commented or not), replace it
+        sudo sed -i "s/^#*${param}.*/${param} ${value}/" "$SSHD_CONFIG"
+    else
+        # If parameter doesn't exist, append it
+        echo "${param} ${value}" | sudo tee -a "$SSHD_CONFIG"
+    fi
+}
+
+# Apply security settings
+modify_sshd_config "PermitRootLogin" "no"
+modify_sshd_config "PasswordAuthentication" "no"
+modify_sshd_config "X11Forwarding" "no"
+modify_sshd_config "MaxAuthTries" "3"
+
+# Verify config file syntax
+if ! sudo sshd -t; then
+    error "SSH configuration is invalid. Please check $SSHD_CONFIG"
+    # Optionally restore from backup
+    exit 1
+fi
+
+# Check if SSH is still accessible (run in background)
+(sleep 5; nc -zv localhost 22) &
+
 sudo systemctl restart sshd
 
 log "Server security setup complete!"
