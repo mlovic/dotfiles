@@ -20,9 +20,10 @@ sudo ufw allow http
 sudo ufw allow https
 sudo ufw --force enable
 
-# Configure fail2ban
-log "Configuring fail2ban..."
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+# Install and configure fail2ban
+log "Installing and configuring fail2ban..."
+sudo apt-get install -y fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local || sudo cp /etc/fail2ban/jail.conf.default /etc/fail2ban/jail.local
 sudo tee /etc/fail2ban/jail.d/custom.conf > /dev/null <<EOL
 [sshd]
 enabled = true
