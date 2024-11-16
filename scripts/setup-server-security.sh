@@ -79,7 +79,14 @@ fi
 # Check if SSH is still accessible (run in background)
 (sleep 5; nc -zv localhost 22) &
 
-sudo systemctl restart sshd
+# Handle both service names (sshd for some distros, ssh for others)
+if systemctl list-unit-files | grep -q '^sshd.service'; then
+    sudo systemctl restart sshd
+elif systemctl list-unit-files | grep -q '^ssh.service'; then
+    sudo systemctl restart ssh
+else
+    error "SSH service not found. Please check if SSH server is installed."
+fi
 
 log "Server security setup complete!"
 log "Next steps:"
