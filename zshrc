@@ -130,4 +130,7 @@ nvm() {
 export FLYCTL_INSTALL="/home/marko/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
+# Load local zshrc customizations if present
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
 alias python=python3

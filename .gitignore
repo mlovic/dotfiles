@@ -9,6 +9,7 @@ custom/
 .local_*
 .env
 .env.*
+.zshrc.local
 
 # IDE and editor files
 .vscode/
