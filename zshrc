@@ -134,3 +134,4 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 alias python=python3
+setxkbmap -option ctrl:nocaps
