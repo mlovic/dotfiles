@@ -129,7 +129,7 @@ chmod +x scripts/*.sh
 
 To backup your system configuration and important files:
 ```bash
-./scripts/backup-system.sh
+./scripts/backup-key-files.sh
 ```
 
 This will create a timestamped archive containing:
@@ -142,7 +142,7 @@ This will create a timestamped archive containing:
 
 To restore from a backup:
 ```bash
-./scripts/restore-system.sh path/to/backup.tar.gz
+./scripts/restore-key-files.sh path/to/backup.tar.gz
 ```
 
 ## Customization
