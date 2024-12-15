@@ -25,7 +25,7 @@ log "Installing essential packages..."
 sudo apt-get install -y \
     curl \
     git \
-    vim \
+    vim-gtk3 \
     zsh \
     tmux \
     htop \
