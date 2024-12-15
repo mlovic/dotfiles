@@ -31,6 +31,7 @@ sudo apt-get install -y \
     htop \
     tree \
     unzip \
+    fd-find \
     python3 \
     python3-pip
 
