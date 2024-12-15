@@ -125,6 +125,26 @@ chmod +x scripts/*.sh
 2. Restart your shell
 3. For desktop setup, log out and select i3 as your window manager
 
+## Backup and Restore
+
+To backup your system configuration and important files:
+```bash
+./scripts/backup-system.sh
+```
+
+This will create a timestamped archive containing:
+- Shell history
+- SSH and GPG keys
+- Crontab entries
+- System configuration files
+- Package lists
+- And more
+
+To restore from a backup:
+```bash
+./scripts/restore-system.sh path/to/backup.tar.gz
+```
+
 ## Customization
 
 Local customizations can be added to:
