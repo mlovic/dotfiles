@@ -31,7 +31,6 @@ A comprehensive setup system for both desktop/laptop and server environments, in
 
 - git
 - sudo access
-- Basic command line knowledge
 
 ## Installation
 
