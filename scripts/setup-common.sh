@@ -80,6 +80,3 @@ fi
 log "Basic server setup complete!"
 log "Next steps:"
 log "1. Setup SSH key: ./setup-ssh.sh"
-log "2. Install dotfiles: git clone https://github.com/mlovic/dotfiles.git ~/.dotfiles"
-log "3. Run dotfiles installer: cd ~/.dotfiles && ./install.sh"
-log "4. For security setup, run: ./setup-server-security.sh"
