@@ -25,7 +25,13 @@ sudo apt-get install -y \
     xclip \
     arandr \
     feh \
-    network-manager
+    network-manager \
+    google-chrome-stable \
+    powertop \
+    tlp \
+    vlc \
+    shutter
+
     #pavucontrol \
     #pulseaudio \
     #blueman

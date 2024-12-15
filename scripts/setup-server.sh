@@ -32,6 +32,9 @@ sudo apt-get install -y \
     tree \
     unzip \
     pipx \
+    exuberant-ctags \
+    sqlite3 \
+    libsqlite3-dev \
     python3 \
     python3-pip
 
