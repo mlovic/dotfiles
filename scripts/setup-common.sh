@@ -41,6 +41,7 @@ sudo apt-get install -y \
     sqlite3 \
     libsqlite3-dev \
     silversearcher-ag \
+    fd-find \
     python3 \
     python3-pip
 
