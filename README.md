@@ -49,6 +49,7 @@ chmod +x install_dotfiles.sh scripts/*.sh
 
 3. Run the laptop setup:
 ```bash
+./scripts/setup-common.sh
 ./scripts/setup-laptop.sh
 ./install_dotfiles.sh
 ```
@@ -64,7 +65,7 @@ chmod +x scripts/*.sh
 
 2. Run the server setup:
 ```bash
-./scripts/setup-server.sh
+./scripts/setup-common.sh
 ./scripts/setup-server-security.sh
 ./install_dotfiles.sh
 ```

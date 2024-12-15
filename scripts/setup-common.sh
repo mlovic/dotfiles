@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# This script installs common dependencies and configurations needed for
+# both server and desktop/laptop environments. It should be run first,
+# followed by either setup-laptop.sh or setup-server-security.sh depending
+# on the target environment.
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
