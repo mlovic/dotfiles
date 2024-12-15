@@ -55,6 +55,9 @@ path=(
     /usr/local/go/bin
     /usr/local/{bin,sbin}
     /usr/{bin,sbin}
+    /usr/games
+    /usr/local/games
+    /snap/bin
     /{bin,sbin}
     $path
 )
