@@ -35,6 +35,7 @@ sudo apt-get install -y \
     google-chrome-stable \
     powertop \
     tlp \
+    brightnessctl \
     vlc \
     shutter
 
