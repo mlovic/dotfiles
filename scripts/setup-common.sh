@@ -40,6 +40,7 @@ sudo apt-get install -y \
     exuberant-ctags \
     sqlite3 \
     libsqlite3-dev \
+    silversearcher-ag \
     python3 \
     python3-pip
 
