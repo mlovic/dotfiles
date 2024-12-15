@@ -28,31 +28,6 @@ log "Configuring TLP..."
 sudo systemctl enable tlp
 sudo systemctl start tlp
 
-# Configure TLP with better defaults
-log "Setting up TLP configuration..."
-sudo tee /etc/tlp.conf > /dev/null <<EOL
-# CPU frequency scaling governor
-CPU_SCALING_GOVERNOR_ON_AC=performance
-CPU_SCALING_GOVERNOR_ON_BAT=powersave
-
-# CPU energy/performance policies
-CPU_ENERGY_PERF_POLICY_ON_AC=performance
-CPU_ENERGY_PERF_POLICY_ON_BAT=power
-
-# Disk devices power management
-DISK_DEVICES="sda sdb"
-DISK_APM_LEVEL_ON_AC="254 254"
-DISK_APM_LEVEL_ON_BAT="128 128"
-
-# WiFi power saving mode
-WIFI_PWR_ON_AC=off
-WIFI_PWR_ON_BAT=on
-
-# PCI Express Active State Power Management
-PCIE_ASPM_ON_AC=default
-PCIE_ASPM_ON_BAT=powersave
-EOL
-
 # Run powertop auto-tune
 log "Running powertop auto-tune..."
 sudo powertop --auto-tune
