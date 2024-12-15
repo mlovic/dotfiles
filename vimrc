@@ -184,3 +184,4 @@ au Filetype clojure nmap <Leader>cf F(i#_<Esc> " FIXME
 "if filereadable(".vim.custom")
     "so .vim.custom
     "
+command! AiderFormat :keeppatterns execute '%s/\s*$//g' | :s/^\s//
