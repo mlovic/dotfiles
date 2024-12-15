@@ -27,10 +27,59 @@ A comprehensive setup system for both desktop/laptop and server environments, in
 - XProfile settings
 - i3 window manager config
 
+## Getting Started
+
+Before using this repository, you'll need to:
+
+1. Install Git:
+```bash
+sudo apt update
+sudo apt install git
+```
+
+2. Set up SSH access:
+   - If you have existing SSH keys:
+     ```bash
+     # Create .ssh directory with correct permissions
+     mkdir -p ~/.ssh
+     chmod 700 ~/.ssh
+     
+     # Copy your existing keys
+     cp /path/to/id_ed25519 ~/.ssh/
+     cp /path/to/id_ed25519.pub ~/.ssh/
+     
+     # Set correct permissions
+     chmod 600 ~/.ssh/id_ed25519
+     chmod 644 ~/.ssh/id_ed25519.pub
+     ```
+   - Or generate new SSH keys:
+     ```bash
+     ssh-keygen -t ed25519 -C "your.email@example.com"
+     ```
+
+3. Add your SSH key to GitHub:
+   - Copy your public key:
+     ```bash
+     cat ~/.ssh/id_ed25519.pub
+     ```
+   - Add it to GitHub at https://github.com/settings/keys
+
+4. Configure Git:
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+5. Clone this repository:
+```bash
+git clone git@github.com:mlovic/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+```
+
 ## Prerequisites
 
-- git
 - sudo access
+- Basic command line knowledge
 
 ## Installation
 
