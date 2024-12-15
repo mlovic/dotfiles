@@ -38,7 +38,7 @@ sudo apt-get install -y \
     vlc \
     shutter
 
-    qpwgraph \
+    pavucontrol-qt \
     bluetooth \
     blueberry \
     pipewire \
