@@ -16,15 +16,9 @@ log "Enabling bluetooth service..."
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
-# Start pulseaudio if not running
-if ! pulseaudio --check; then
-    log "Starting pulseaudio..."
-    pulseaudio --start
-fi
-
-# Load bluetooth module for pulseaudio
-log "Loading bluetooth module for pulseaudio..."
-pactl load-module module-bluetooth-discover
+# Ensure PipeWire services are running
+log "Ensuring PipeWire services are running..."
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
 
 log "Bluetooth setup complete!"
 log "You can use 'bluetoothctl' for command-line management or blueberry-tray for GUI"

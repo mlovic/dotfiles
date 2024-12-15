@@ -38,10 +38,13 @@ sudo apt-get install -y \
     vlc \
     shutter
 
-    pavucontrol \
-    pulseaudio \
+    qpwgraph \
     bluetooth \
-    blueberry
+    blueberry \
+    pipewire \
+    pipewire-pulse \
+    pipewire-audio \
+    wireplumber
 
 # Install Solarized for GNOME Terminal
 log "Installing Solarized for terminal..."
