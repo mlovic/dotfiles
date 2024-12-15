@@ -32,9 +32,6 @@ cp -r "$BACKUP_DIR/.zsh_history" "$HOME/" 2>/dev/null || true
 cp -r "$BACKUP_DIR/.bash_history" "$HOME/" 2>/dev/null || true
 cp -r "$BACKUP_DIR/.viminfo" "$HOME/" 2>/dev/null || true
 cp -r "$BACKUP_DIR/.ssh" "$HOME/"
-cp -r "$BACKUP_DIR/.gnupg" "$HOME/" 2>/dev/null || true
-cp -r "$BACKUP_DIR/.config" "$HOME/"
-cp -r "$BACKUP_DIR/local-applications" "$HOME/.local/share/applications" 2>/dev/null || true
 
 # Restore crontab
 log "Restoring crontab..."

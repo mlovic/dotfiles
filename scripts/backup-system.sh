@@ -22,9 +22,6 @@ cp -r "$HOME/.zsh_history" "$BACKUP_DIR/"
 cp -r "$HOME/.bash_history" "$BACKUP_DIR/" 2>/dev/null || true
 cp -r "$HOME/.viminfo" "$BACKUP_DIR/" 2>/dev/null || true
 cp -r "$HOME/.ssh" "$BACKUP_DIR/"
-cp -r "$HOME/.gnupg" "$BACKUP_DIR/" 2>/dev/null || true
-cp -r "$HOME/.config" "$BACKUP_DIR/"
-cp -r "$HOME/.local/share/applications" "$BACKUP_DIR/local-applications" 2>/dev/null || true
 
 # Backup crontab
 log "Backing up crontab..."
