@@ -55,6 +55,14 @@ setup_git() {
 # Main
 setup_git
 
+# Install oh-my-zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    log "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+    warn "oh-my-zsh is already installed"
+fi
+
 # Set zsh as default shell
 if [ "$SHELL" != "/usr/bin/zsh" ]; then
     log "Setting zsh as default shell..."
