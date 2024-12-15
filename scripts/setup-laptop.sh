@@ -25,15 +25,10 @@ sudo apt-get install -y \
     xclip \
     arandr \
     feh \
-    pavucontrol \
-    pulseaudio \
-    network-manager \
-    blueman
-
-# Copy i3 config
-log "Setting up i3 config..."
-mkdir -p ~/.config/i3
-cp other/i3_config ~/.config/i3/config
+    network-manager
+    #pavucontrol \
+    #pulseaudio \
+    #blueman
 
 log "Laptop-specific setup complete!"
 log "Next steps:"
