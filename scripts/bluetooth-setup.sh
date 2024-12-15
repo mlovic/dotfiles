@@ -21,7 +21,7 @@ log "Ensuring PipeWire services are running..."
 systemctl --user enable --now pipewire pipewire-pulse wireplumber
 
 log "Bluetooth setup complete!"
-log "You can use 'bluetoothctl' for command-line management or gnome-bluetooth-control for GUI"
+log "You can use 'bluetoothctl' for command-line management or blueman-applet for GUI"
 log "Common bluetoothctl commands:"
 log "  power on     - Turn on bluetooth"
 log "  scan on      - Start scanning for devices"
