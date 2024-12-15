@@ -38,9 +38,10 @@ sudo apt-get install -y \
     vlc \
     shutter
 
-    #pavucontrol \
-    #pulseaudio \
-    #blueman
+    pavucontrol \
+    pulseaudio \
+    bluetooth \
+    blueberry
 
 # Install Solarized for GNOME Terminal
 log "Installing Solarized for terminal..."
