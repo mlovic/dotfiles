@@ -40,7 +40,7 @@ sudo apt-get install -y \
 
     pavucontrol-qt \
     bluetooth \
-    blueberry \
+    gnome-bluetooth \
     pipewire \
     pipewire-pulse \
     pipewire-audio \
