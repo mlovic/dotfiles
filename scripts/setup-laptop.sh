@@ -42,6 +42,12 @@ sudo apt-get install -y \
     #pulseaudio \
     #blueman
 
+# Install Solarized for GNOME Terminal
+log "Installing Solarized for terminal..."
+git clone https://github.com/aruhier/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-colors-solarized
+/tmp/gnome-terminal-colors-solarized/install.sh --skip-dircolors
+rm -rf /tmp/gnome-terminal-colors-solarized
+
 log "Laptop-specific setup complete!"
 log "Next steps:"
 log "1. Log out and select i3 as your window manager at the login screen"

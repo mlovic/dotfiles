@@ -69,7 +69,8 @@ filetype plugin on
 filetype indent on
 set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
+let g:solarized_visibility="normal"
+let g:solarized_contrast="normal"
 silent! colo solarized
 hi Normal guibg=NONE ctermbg=NONE
 " Not working without solarized?
