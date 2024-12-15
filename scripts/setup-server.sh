@@ -31,9 +31,7 @@ sudo apt-get install -y \
     htop \
     tree \
     unzip \
-    fd-find \
     pipx \
-    silversearcher-ag \
     python3 \
     python3-pip
 
