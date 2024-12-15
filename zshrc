@@ -114,7 +114,7 @@ export PATH="$HOME/.okta/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf configuration
-export FZF_DEFAULT_COMMAND='find . -type f -not -path "*/\.git/*" -not -path "*/node_modules/*" -not -path "*/myenv/*" -not -path "*/__pycache__/*"'
+export FZF_DEFAULT_COMMAND='fdfind --type f --no-ignore  --hidden --exclude .git --exclude node_modules --exclude myenv --exclude __pycache__ --exclude "*.sw*"'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
