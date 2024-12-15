@@ -41,9 +41,6 @@ log "Restoring crontab..."
 # Restore system files (requires sudo)
 log "Restoring system files..."
 sudo cp "$BACKUP_DIR/hosts" /etc/hosts
-sudo cp "$BACKUP_DIR/fstab" /etc/fstab
-sudo cp -r "$BACKUP_DIR/apt-sources/"* /etc/apt/sources.list.d/
-[ -f "$BACKUP_DIR/grub" ] && sudo cp "$BACKUP_DIR/grub" /etc/default/grub
 
 # Clean up
 rm -rf "$TEMP_DIR"
