@@ -50,10 +50,11 @@ sudo apt-get install -y \
     acpi-call-dkms \
     laptop-mode-tools
 
-# Enable and start TLP
+# Install and configure TLP
 log "Configuring TLP..."
-sudo systemctl enable tlp
-sudo systemctl start tlp
+sudo apt-get install -y tlp tlp-rdw
+sudo systemctl enable tlp.service
+sudo systemctl start tlp.service
 
 # Run powertop auto-tune
 log "Running powertop auto-tune..."
