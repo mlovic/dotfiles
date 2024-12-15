@@ -45,7 +45,19 @@ sudo apt-get install -y \
     pipewire \
     pipewire-pulse \
     pipewire-audio \
-    wireplumber
+    wireplumber \
+    acpi \
+    acpi-call-dkms \
+    laptop-mode-tools
+
+# Enable and start TLP
+log "Configuring TLP..."
+sudo systemctl enable tlp
+sudo systemctl start tlp
+
+# Run powertop auto-tune
+log "Running powertop auto-tune..."
+sudo powertop --auto-tune
 
 # Install Solarized for GNOME Terminal
 log "Installing Solarized for terminal..."
