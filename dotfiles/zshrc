@@ -100,9 +100,6 @@ path+=(
     $HOME/kafka/bin
 )
 
-# Load kubectl completion
-source <(kubectl completion zsh)
-
 #OktaAWSCLI
 if [[ -f "$HOME/.okta/bash_functions" ]]; then
     . "$HOME/.okta/bash_functions"
