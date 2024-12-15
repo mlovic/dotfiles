@@ -11,6 +11,7 @@ Personal dotfiles configuration for Linux/Unix systems.
 - python3
 - i3 (optional, for window management)
 
+
 ## Installation
 
 1. Make the installation scripts executable:
@@ -26,7 +27,7 @@ cd ~/dotfiles
 
 2. Run the installer:
 ```bash
-./install.sh
+./install-dotfiles.sh
 ```
 
 ## What's Included
