@@ -32,6 +32,8 @@ sudo apt-get install -y \
     tree \
     unzip \
     fd-find \
+    pipx \
+    silversearcher-ag \
     python3 \
     python3-pip
 
@@ -39,6 +41,9 @@ sudo apt-get install -y \
 log "Installing fzf..."
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
+
+log "Installing aider..."
+pipx install aider-chat
 
 # Setup SSH key
 setup_ssh() {
