@@ -73,12 +73,12 @@ fi
 
 # Define files to symlink
 declare -A files=(
-    ["vimrc"]="$HOME/.vimrc"
-    ["zshrc"]="$HOME/.zshrc"
-    ["functions"]="$HOME/.functions"
-    ["aliases"]="$HOME/.aliases"
-    ["gitconfig"]="$HOME/.gitconfig"
-    ["xprofile"]="$HOME/.xprofile"
+    ["dotfiles/vimrc"]="$HOME/.vimrc"
+    ["dotfiles/zshrc"]="$HOME/.zshrc"
+    ["dotfiles/functions"]="$HOME/.functions"
+    ["dotfiles/aliases"]="$HOME/.aliases"
+    ["dotfiles/gitconfig"]="$HOME/.gitconfig"
+    ["dotfiles/xprofile"]="$HOME/.xprofile"
     ["other/i3_config"]="$HOME/.config/i3/config"
     ["other/toggle_keyboard_layout.sh"]="$HOME/.config/i3/toggle_keyboard_layout.sh"
 )
