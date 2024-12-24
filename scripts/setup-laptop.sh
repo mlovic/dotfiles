@@ -50,6 +50,10 @@ sudo apt-get install -y \
     acpi-call-dkms \
     laptop-mode-tools
 
+# Add user to video group for brightness control
+log "Adding user to video group..."
+sudo usermod -aG video "$USER"
+
 # Install and configure TLP
 log "Configuring TLP..."
 sudo apt-get install -y tlp tlp-rdw
