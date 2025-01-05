@@ -63,6 +63,19 @@ sudo systemctl start tlp.service
 log "Installing NordVPN..."
 sudo snap install nordvpn
 
+log "Configuring NordVPN permissions..."
+sudo groupadd nordvpn || true  # '|| true' prevents script from failing if group already exists
+sudo usermod -aG nordvpn $USER
+
+# Configure necessary snap connections for NordVPN
+sudo snap connect nordvpn:network-control
+sudo snap connect nordvpn:network-observe
+sudo snap connect nordvpn:firewall-control
+sudo snap connect nordvpn:login-session-observe
+sudo snap connect nordvpn:system-observe
+
+log "NordVPN installed. Please run 'nordvpn login' to start using the service."
+
 # Run powertop auto-tune
 log "Running powertop auto-tune..."
 sudo powertop --auto-tune
