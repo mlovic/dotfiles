@@ -60,6 +60,9 @@ sudo apt-get install -y tlp tlp-rdw
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
 
+log "Installing NordVPN..."
+sudo snap install nordvpn
+
 # Run powertop auto-tune
 log "Running powertop auto-tune..."
 sudo powertop --auto-tune
