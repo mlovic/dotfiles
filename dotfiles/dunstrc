@@ -1,0 +1,22 @@
+[global]
+    font = Monospace 10
+    format = "<b>%s</b>\n%b"
+    geometry = "300x5-30+20"
+    transparency = 0
+    follow = mouse
+    word_wrap = yes
+
+[urgency_low]
+    background = "#222222"
+    foreground = "#888888"
+    timeout = 10
+
+[urgency_normal]
+    background = "#285577"
+    foreground = "#ffffff"
+    timeout = 10
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    timeout = 0
