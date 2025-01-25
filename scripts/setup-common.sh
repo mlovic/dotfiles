@@ -43,8 +43,7 @@ sudo apt-get install -y \
     silversearcher-ag \
     fd-find \
     python3 \
-    python3-pip \
-    maim
+    python3-pip
 
 # Install fzf from source
 log "Installing fzf..."

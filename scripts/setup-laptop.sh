@@ -29,6 +29,7 @@ sudo apt-get install -y \
     i3status \
     dmenu \
     xclip \
+    maim \
     arandr \
     feh \
     network-manager \
