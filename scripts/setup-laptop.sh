@@ -38,7 +38,8 @@ sudo apt-get install -y \
     tlp \
     brightnessctl \
     vlc \
-    shutter
+    shutter \
+    lxappearance
 
     pavucontrol-qt \
     bluetooth \
