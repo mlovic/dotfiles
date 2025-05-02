@@ -62,6 +62,7 @@ cd "$DOTFILES_DIR"
 log "Creating required directories..."
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/dunst
+mkdir -p ~/.config/i3status
 mkdir -p ~/.vim/autoload
 mkdir -p ~/.oh-my-zsh-custom/themes
 
@@ -81,6 +82,7 @@ declare -A files=(
     ["dotfiles/gitconfig"]="$HOME/.gitconfig"
     ["dotfiles/xprofile"]="$HOME/.xprofile"
     ["dotfiles/dunstrc"]="$HOME/.config/dunst/dunstrc"
+    ["dotfiles/i3status.conf"]="$HOME/.config/i3status/config"
     ["other/i3_config"]="$HOME/.config/i3/config"
     ["other/toggle_keyboard_layout.sh"]="$HOME/.config/i3/toggle_keyboard_layout.sh"
 )
