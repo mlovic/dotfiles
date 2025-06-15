@@ -119,12 +119,38 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 precmd () { pwd > /tmp/whereami }
-  # This lazy loads nvm
+
+# This lazy loads nvm
 export NVM_DIR="$HOME/.nvm"
 nvm() {
   unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
   nvm $@
+}
+
+# Lazy load node
+node() {
+  unset -f node
+  unset -f npm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+  nvm use default
+  node $@
+}
+
+# Lazy load npm
+npm() {
+  unset -f node
+  unset -f npm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+  nvm use default
+  npm $@
+}
+
+claude() {
+  unset -f claude
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+  nvm use default >/dev/null 2>&1
+  claude $@
 }
 
 export FLYCTL_INSTALL="/home/marko/.fly"
@@ -134,3 +160,4 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 alias python=python3
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
