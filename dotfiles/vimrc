@@ -48,6 +48,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'vim-python/python-syntax'
 Plug 'junegunn/fzf'
+Plug 'mtdl9/vim-log-highlighting'
 nmap <C-P> :FZF<CR>
 
 call plug#end()
