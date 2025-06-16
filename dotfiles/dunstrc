@@ -1,17 +1,25 @@
 [global]
     follow = keyboard
+    
+    # Sound configuration
+    # Play sound for notifications
+    enable_recursive_icon_lookup = true
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [urgency_low]
     background = "#222222"
     foreground = "#888888"
     timeout = 60
+    script = /home/marko/.local/bin/dunst-sound-low
 
 [urgency_normal]
     background = "#285577"
     foreground = "#ffffff"
     timeout = 60
+    script = /home/marko/.local/bin/dunst-sound-normal
 
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"
     timeout = 0
+    script = /home/marko/.local/bin/dunst-sound-critical
