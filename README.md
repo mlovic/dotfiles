@@ -125,6 +125,15 @@ chmod +x scripts/*.sh
 2. Restart your shell
 3. For desktop setup, log out and select i3 as your window manager
 
+Go to `/etc/UPower/UPower.conf` and set:
+
+```
+PercentageLow=20        # You're already below this
+PercentageCritical=10   # Still 5% to go
+PercentageAction=5      # This is when it acts
+CriticalPowerAction=Suspend
+```
+
 ## Backup and Restore
 
 To backup your system configuration and important files:
