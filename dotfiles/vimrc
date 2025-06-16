@@ -187,3 +187,14 @@ au Filetype clojure nmap <Leader>cf F(i#_<Esc> " FIXME
     "so .vim.custom
     "
 command! AiderFormat :keeppatterns execute '%s/\s*$//g' | :s/^\s//
+
+function! TrimTrailingWhitespace()
+  " Save cursor position
+  let l:save_cursor = getpos(".")
+  " Remove trailing whitespace
+  silent! %s/\s\+$//e
+  " Restore cursor position
+  call setpos('.', l:save_cursor)
+endfunction
+
+command! TrimWhitespace call TrimTrailingWhitespace()
