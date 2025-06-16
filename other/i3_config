@@ -42,7 +42,7 @@ floating_modifier $mod
 
 #bindsym $mod+Return exec gnome-terminal --working-directory="`xcwd`"
 #bindsym $mod+Return exec gnome-terminal --working-directory="`xcwd`"
-bindsym $mod+Return exec gnome-terminal --working-directory="$(cat /tmp/whereami)"
+bindsym $mod+Return exec alacritty --working-directory="$(cat /tmp/whereami 2>/dev/null || echo $HOME)"
 #bindsym $mod+Return exec /home/marko/i3-shell.sh
 
 #bindsym $mod+Return exec alacritty
@@ -210,3 +210,14 @@ exec --no-startup-id ~/scripts/fix-display-gamma.sh
 #
 exec --no-startup-id xinput --set-prop 21 'libinput Accel Speed' 0.9
 exec --no-startup-id xinput --set-prop 17 'libinput Accel Speed' 0.4
+
+# Window border settings
+for_window [class=".*"] border pixel 2
+
+# Alacritty specific settings
+for_window [class="Alacritty"] border pixel 2
+
+# Focus border colors
+client.focused          #268bd2 #268bd2 #fdf6e3 #268bd2 #268bd2
+client.focused_inactive #073642 #073642 #839496 #073642 #073642
+client.unfocused        #073642 #073642 #839496 #073642 #073642
