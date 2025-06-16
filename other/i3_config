@@ -220,4 +220,4 @@ for_window [class="Alacritty"] border pixel 2
 # Focus border colors
 client.focused          #268bd2 #268bd2 #fdf6e3 #268bd2 #268bd2
 client.focused_inactive #073642 #073642 #839496 #073642 #073642
-client.unfocused        #073642 #073642 #839496 #073642 #073642
+#client.unfocused        #073642 #073642 #839496 #073642 #073642
