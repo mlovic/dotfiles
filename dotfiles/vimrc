@@ -154,6 +154,7 @@ nnoremap <Leader>x :s/.$//<CR>
 "Deletes last word of line
 nnoremap <Leader>X :s/\w*$//<CR>
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>c :TokenCount<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 
 " Remove trailing whitespace. Taken from https://vi.stackexchange.com/a/2285
@@ -162,6 +163,9 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "COMMANDS
 command! Transparent hi Normal guibg=NONE ctermbg=NONE
 "command  Wc '!wc %'
+
+" Token counting command using tiktoken
+command! -nargs=? TokenCount echo system('/home/marko/pred_markets/myenv/bin/python -c "import sys, tiktoken; enc = tiktoken.encoding_for_model(\"' . (<q-args> != '' ? <q-args> : 'o3') . '\"); print(f\"{len(enc.encode(sys.stdin.read())):,} tokens (' . (<q-args> != '' ? <q-args> : 'o3') . ')\")"', join(getline(1, '$'), "\n"))
 
 " Should this go in clojure.vim?
 function! TestToplevel() abort  
@@ -198,3 +202,4 @@ function! TrimTrailingWhitespace()
 endfunction
 
 command! TrimWhitespace call TrimTrailingWhitespace()
+set belloff=all
